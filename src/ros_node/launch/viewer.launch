@@ -1,0 +1,25 @@
+<launch>
+    <!-- global control parameters -->
+    <arg name="glb_lidar_dir" default="/KITTI/odometry/sequences/00/velodyne/" />
+    <arg name="glb_rate" default="2000000" />
+    <!-- FugSeg related parameters -->
+    <arg name="grd_NumSegs" default="120" />
+    <arg name="grd_BinRes" default="1.0" />
+    <arg name="grd_ThreInlier" default="0.15" />
+    <arg name="grd_DslopeDegMax" default="7.0" />
+    <arg name="grd_MaxGapRadial" default="10.0" />
+
+    <!-- start the node fugseg_node::viewer -->
+    <node pkg="fugseg_node" type="viewer" name="viewer" output="screen" required="true">
+        <param name="glb_lidar_dir" value="$(arg glb_lidar_dir)" />
+        <param name="glb_rate" value="$(arg glb_rate)" />
+        <param name="grd_NumSegs" value="$(arg grd_NumSegs)" />
+        <param name="grd_BinRes" value="$(arg grd_BinRes)" />
+        <param name="grd_ThreInlier" value="$(arg grd_ThreInlier)" />
+        <param name="grd_DslopeDegMax" value="$(arg grd_DslopeDegMax)" />
+        <param name="grd_MaxGapRadial" value="$(arg grd_MaxGapRadial)" />
+    </node>
+
+    <!-- start the rviz node -->
+    <node pkg="rviz" type="rviz" name="rviz_viewer" args="-d $(find fugseg_node)/launch/viewer.rviz" required="true"/>
+</launch>

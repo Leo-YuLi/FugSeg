@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fugseg</name>
+  <version>0.0.1</version>
+  <description>FugSeg: Fast Uncertainty-Aware Ground Segmentation for 3-D Point Cloud (published to IEEE TITS, 2026)</description>
+  <maintainer email="example@example.example">Yu Li</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
