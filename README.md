@@ -4,6 +4,11 @@ This repository hosts the official implementation of [FugSeg](https://doi.org/10
 
 FugSeg is a fast uncertainty-aware method for ground segmentation in 3D point clouds, designed to address reflection noise and isolated/occluded ground regions. It uses a **polar grid map** for cross-LiDAR generalizability, a **within- and cross-segment labeling strategy**, and an **adaptive slope** that incorporates measurement uncertainties. Point-level segmentation is achieved through **fine-grained ground elevation estimation**, while reflection noise is explicitly handled through noisy ground cells. On four public benchmarks (SemanticKITTI, nuScenes, KITTI-360, LiDARDustX), FugSeg achieves the highest F1, accuracy, and mIoU among non-learning methods, running at **135 Hz / 487 Hz** for 64- and 32-layer LiDARs on a single CPU thread.
 
+<p align="center">FugSeg on the SemanticKITTI and nuScenes datasets</p>
+<p align="center">
+  <img src="figs/video_480p.gif" alt="FugSeg on the SemanticKITTI and nuScenes datasets" />
+</p>
+
 <p align="center">Table 1: Performance of FugSeg on the SemanticKITTI, nuScenes and KITTI-360 datasets</p>
 <p align="center">
 	<img src="figs/eval_1.png" alt="Performance of FugSeg on the SemanticKITTI, nuScenes and KITTI-360 datasets" />
@@ -80,10 +85,7 @@ To adapt the pipeline to other datasets/sensors, update the sensor-dependent imp
 - File parsing and frame conventions used by the dataset
 - Sensor-specific parameters such as the angular and ranging accuracy, the installation height, and the bounding box of ego reflections 
 
-## Visual Results
-
-FugSeg on the SemanticKITTI and nuScenes datasets:<br>
-![FugSeg on the SemanticKITTI and nuScenes datasets](figs/video_480p.gif)
+## Further Visual Results
 
 FugSeg on the KITTI-360 dataset:<br>
 ![FugSeg on the KITTI-360 dataset](figs/kitti360.gif)
