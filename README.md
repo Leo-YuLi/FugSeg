@@ -112,7 +112,9 @@ Please cite our publication if you use this code:
   journal={IEEE Transactions on Intelligent Transportation Systems},
   title={FugSeg: Fast Uncertainty-Aware Ground Segmentation for 3-D Point Cloud},
   year={2026},
-  pages={1-14},
+  volume={27},
+  number={8},
+  pages={9288-9301},
   doi={10.1109/TITS.2026.3682176}
 }
 ```
